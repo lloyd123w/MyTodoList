@@ -8,25 +8,15 @@ const Drawer = createDrawerNavigator();
 
 const CustomDrawerContent = (props) => (
   <DrawerContentScrollView {...props}>
-    <View style={styles.drawerContent}>
-      <View style={styles.drawerHeader}>
-        <Image source={require('./assets/lloyd.png')} style={styles.drawerImage} />
-        <Text style={styles.mahName}>Lloyd Earnest A. Taburno</Text>
-        <Text style={styles.sectionCode}>IT73-IT35B</Text>
-        <Text style={styles.courseName}>Bachelor of Science in Information Technology</Text>
-        <Text style={styles.courseDesc}>Nice</Text>
-        <Text style={styles.studId}>20211457@nbsc.edu.ph</Text>
-      </View>
-      <DrawerItemList {...props} />
+    <View style={styles.drawerHeader}>
+      <Image source={require('./assets/lloyd.jpg')} style={styles.drawerImage} />
+      <Text style={styles.mahName}>Lloyd Earnest A. Taburno</Text>
+      <Text style={styles.sectionCode}>IT73-IT35B</Text>
+      <Text style={styles.courseName}>Bachelor of Science in Information Technology</Text>
+      <Text style={styles.courseDesc}>Nice</Text>
+      <Text style={styles.studId}>20211457@nbsc.edu.ph</Text>
     </View>
-    <View style={styles.drawerFooter}>
-      <DrawerItem
-        label="Todo List"
-        onPress={() => props.navigation.navigate('TodoList')}
-        style={styles.todoButton}
-        labelStyle={styles.todoLabel}
-      />
-    </View>
+    <DrawerItemList {...props} />
   </DrawerContentScrollView>
 );
 
@@ -41,11 +31,8 @@ const App = () => {
 };
 
 const styles = StyleSheet.create({
-  drawerContent: {
-    flex: 1,
-  },
   drawerHeader: {
-    backgroundColor: '#FFF', // Change background color to white
+    backgroundColor: '#FFF',
     paddingVertical: 20,
     paddingHorizontal: 10,
     alignItems: 'center',
@@ -53,44 +40,33 @@ const styles = StyleSheet.create({
   mahName: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#333', // Change text color to a dark shade of gray
+    color: '#333',
     marginBottom: 10,
   },
   sectionCode: {
     fontSize: 16,
-    color: '#555', // Change text color to a lighter shade of gray
+    color: '#555',
     marginBottom: 5,
   },
   courseName: {
     fontSize: 14,
-    color: '#555', // Change text color to a lighter shade of gray
+    color: '#555',
     marginBottom: 5,
   },
   courseDesc: {
     fontSize: 14,
-    color: '#555', // Change text color to a lighter shade of gray
+    color: '#555',
     marginBottom: 5,
   },
   studId: {
     fontSize: 14,
-    color: '#555', // Change text color to a lighter shade of gray
+    color: '#555',
   },
   drawerImage: {
     width: 150,
     height: 150,
     borderRadius: 75,
     marginBottom: 20,
-  },
-  drawerFooter: {
-    alignItems: 'center',
-    marginBottom: 20,
-  },
-  todoButton: {
-    justifyContent: 'center',
-    width: 120, 
-  },
-  todoLabel: {
-    textAlign: 'center',
   },
 });
 
